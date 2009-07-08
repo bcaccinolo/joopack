@@ -1,0 +1,3 @@
+
+page.replace 'info_perso', :partial => "show", :locals => {"civility" => @civility}
+

@@ -1,0 +1,38 @@
+
+
+
+<% if export_action.nil? or export_action.status == "DONE_TAKEN" %>
+
+  <% if section == "pdf_export" %>
+    <%= link_to_remote "Exporter en PDF", :url => url_for(:controller => "export", 
+        :action => "create_action", :type => "pdf_export") %>
+  <% elsif section == "doc_export" %>
+    <%= link_to_remote "Exporter en DOC", :url => url_for(:controller => "export", 
+        :action => "create_action", :type => "doc_export") %>
+  <% elsif section == "odt_export" %>
+    <%= link_to_remote "Exporter en ODT", :url => url_for(:controller => "export", 
+        :action => "create_action", :type => "odt_export") %>
+  <% end %>
+
+<% else %>
+
+  <% case export_action.status  
+    when "WAITING", "RUNNING" %>
+      Le CV est en cours de génération. Il vous sera envoyé par mail dans les minutes qui suivent.
+    <% else # "DONE_NOT_TAKEN" %>
+      Votre CV a été genéré et vous à été expédiez.
+      <% if section == "pdf_export" %>
+        <%= link_to_remote "Réinitialiser", :url => url_for(:controller => "export", 
+            :action => "reinitialize", :type => "pdf_export") %>
+      <% elsif section == "doc_export" %>
+        <%= link_to_remote "Réinitaliser", :url => url_for(:controller => "export", 
+            :action => "reinitialize", :type => "doc_export") %>      
+      <% elsif section == "odt_export" %>
+        <%= link_to_remote "Réinitaliser", :url => url_for(:controller => "export", 
+            :action => "reinitialize", :type => "odt_export") %>      
+      <% end %>
+  <% end %>
+
+<% end %>
+
+  		

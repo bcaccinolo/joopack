@@ -1,0 +1,27 @@
+<h1>Listing mody_texts</h1>
+
+<table>
+  <tr>
+  <% for column in ModyText.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for mody_text in @mody_texts %>
+  <tr>
+  <% for column in ModyText.content_columns %>
+    <td><%=h mody_text.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => mody_text %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => mody_text %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => mody_text }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @mody_text_pages.current.previous } if @mody_text_pages.current.previous %>
+<%= link_to 'Next page', { :page => @mody_text_pages.current.next } if @mody_text_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New mody_text', :action => 'new' %>

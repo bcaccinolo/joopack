@@ -1,0 +1,2 @@
+
+page.visual_effect :slideUp, 'hobby_'+params['id']

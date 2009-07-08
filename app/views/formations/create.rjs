@@ -1,0 +1,2 @@
+
+page.replace 'formation_list', :partial => "list"

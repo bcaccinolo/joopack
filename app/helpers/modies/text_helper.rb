@@ -1,0 +1,2 @@
+module Modies::TextHelper
+end

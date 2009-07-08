@@ -1,0 +1,13 @@
+<% form_remote_tag :url => url_for(:controller => "formations", :action => 'create'), :html => { :class => "classic" } do -%>
+  <%= render :partial => 'form' %>
+
+<div class="buttons">
+  <%= submit_tag "Enregistrer" %>
+ou 
+  <%= link_to_remote "Annuler", :url => { :controller => "formations", :action => 'create', :id => "cancel"} %>
+<% end %>
+</div>
+
+<script type="text/javascript">
+	$('formation_diploma').focus()	
+</script>

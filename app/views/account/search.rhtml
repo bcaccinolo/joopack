@@ -1,0 +1,27 @@
+
+<div class="content">
+
+<div class="block">
+	<h3>Vos critères de recherche</h3>
+
+	<div class="search_form">
+		<div id="search_block">
+		<%= render :partial => "form_search" %>
+		</div>
+	</div>	
+
+</div>
+
+<div class="block">
+	<h3>Les résultats de votre recherche</h3>
+
+  <%= render :partial => "one_result", :collection => @results %>
+</div>
+
+<!-- <div class="navigation">
+<a class="nav_button" id="prev" ><< Prev</a>
+<a class="nav_button" id="next" >Next >></a>
+</div> -->
+
+
+</div>

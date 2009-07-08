@@ -1,0 +1,7 @@
+<% for column in Civility.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h civility.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to_remote "modify", :update => "info_perso", :url => {:controller => "civilities", :action => "edit", :id => civility.id} %>

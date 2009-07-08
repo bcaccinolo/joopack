@@ -1,0 +1,4 @@
+
+page.replace_html "speak_#{@speaking.id}", :partial => "speakings/show", 
+                  :locals => {"speak" => @speaking, "user_id" => @user.id}
+

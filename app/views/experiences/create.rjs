@@ -1,0 +1,2 @@
+
+page.replace 'exp_list', :partial => "list"

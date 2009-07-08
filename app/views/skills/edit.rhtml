@@ -1,0 +1,15 @@
+<% form_remote_tag :url => url_for(:action => 'update', :id => @skill), :html => { :class => "classic" } do -%>
+  <%= render :partial => 'form' %>  
+
+<div class="buttons">
+  <%= submit_tag "Enregistrer"	%>
+ou 
+ <%= link_to_remote "Annuler", :url => { :controller => "skills", :action => 'create', :id => "cancel"} %>
+
+</div>
+<% end %>
+
+<script type="text/javascript">
+	$('skill_title').focus()
+</script>
+

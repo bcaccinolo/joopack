@@ -1,0 +1,20 @@
+
+<% form_remote_tag :url => url_for(:controller => "moovers_datas", :action => "update_title", :id => @moovers_data.id), :html => { :class => "cv_title" } do -%>
+
+<%= error_messages_for 'moovers_data' %>
+
+<dl>
+  <dd><%= text_field 'moovers_data', 'cv_title', :class => "title"  %></dd>
+</dl>
+
+<div class="buttons">
+  <%= submit_tag 'Enregistrer' %>
+ou
+	<%= link_to_remote "Annuler", :update => "title_block", :url => {:controller => "moovers_datas", :action => "cancel_update_title", :id => @moovers_data.id} %>
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+	$('moovers_data_cv_title').focus()	
+</script>

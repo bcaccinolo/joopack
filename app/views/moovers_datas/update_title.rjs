@@ -1,0 +1,2 @@
+
+page.replace_html 'title_block', :partial => "moovers_datas/cv_title", :locals => { :user => @user, :moovers_data => @moovers_data}

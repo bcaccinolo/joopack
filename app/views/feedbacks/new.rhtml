@@ -1,0 +1,18 @@
+
+<div class="content">
+
+  <% unless flash[:notice].nil? %>
+  <div class="flash">
+    <div class="info"><%= flash[:notice] %></div>
+  </div>
+  <% end %>
+
+
+<div class="header_form"><h1>Remarque ou Suggestion</h1></div>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Envoyer" %>
+<% end %>
+
+</div>

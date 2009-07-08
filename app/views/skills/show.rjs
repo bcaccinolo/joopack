@@ -1,0 +1,7 @@
+
+page.replace "exp_list", :partial => "experiences/list", :locals => { :type => @current_type }
+
+page.replace "plus_exp",  link_to_remote( "[+]", :url => { :controller => "experiences", :action => "show", :type => @future_type} )
+
+
+

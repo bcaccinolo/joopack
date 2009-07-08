@@ -1,0 +1,9 @@
+
+<div class="search_form">
+  
+<% form_tag :controller => "account", :action => 'search' do %>
+
+<input type="text" id="request" name="request" value="<%= params[:request] %>" /> <%= submit_tag "Rechercher" %>
+
+<% end %>
+</div>

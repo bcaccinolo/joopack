@@ -1,0 +1,13 @@
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+
+  <%= submit_to_remote "Update", "Enregistrer", 
+		:url => {:controller => "modies/links", :action => "create", :id => @mody_id, :main_id => @main_id } 
+	%>
+ou 
+ <%= link_to_remote "Annuler", :url => { :controller => "modies/links", :action => 'create', :id => "cancel", 
+										:main_id => @main_id} %>
+
+<% end %>
+

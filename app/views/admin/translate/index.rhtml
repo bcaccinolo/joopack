@@ -1,0 +1,23 @@
+<table style="margin:0 auto 0 auto; width:600px;" >
+<tr>
+<td>
+<H1>ENGLISH (<%= @en_view_translations.size %>) </H1>
+  <% @en_view_translations.each do |tr| -%> 
+    <%= render :partial => 'translation_form', :locals => {:tr => tr} %> 
+    <hr>
+  <% end -%>
+</td>
+
+<td>
+<h1>FRANCAIS (<%= @fr_view_translations.size %>)</h1>
+  <% @fr_view_translations.each do |tr| -%> 
+    <%= render :partial => 'translation_form', :locals => {:tr => tr} %> 
+    <hr>
+  <% end -%>
+</td>
+</tr>
+</table>
+
+
+
+

@@ -1,0 +1,2 @@
+
+page.replace_html 'exp_'+@experience.id.to_s, :partial => "experiences/show", :locals => {"e" => @experience}

@@ -1,0 +1,36 @@
+
+		<div class="control_block2">
+		<% if logged_in? and @user.login == current_user.login and not @moovers_data.nil?   %>
+				<%= link_to_remote "Editer", 
+				:url => { :controller => "moovers_datas", :action => "edit", :id => @cv.moovers_data.id} %>
+
+		<% end  %>
+		</div>
+
+<dl>
+
+    <dd><%= @moovers_data.firstname unless @moovers_data.firstname.blank? %> 
+    <%= @moovers_data.lastname unless @moovers_data.lastname.blank? %></dd>
+    <% unless @moovers_data.age.blank? %>
+    <dd><%= @moovers_data.age %> ans</dd>
+    <% end %>
+    <% unless @moovers_data.address.blank? %>
+    <dd><%= @moovers_data.address %></dd>
+    <% end %>
+
+    <dd>
+    <%= @moovers_data.postal_code unless @moovers_data.postal_code.blank? %>
+     <%= @moovers_data.city unless @moovers_data.city.blank? %>
+    </dd>
+
+    <% unless @moovers_data.email.blank? %>
+    <dd><%= @moovers_data.email %></dd>
+    <% end %>
+
+    <% unless @moovers_data.phone.blank? %>
+    <dd><%= @moovers_data.phone %></dd>
+    <% end %>
+
+</dl>
+
+

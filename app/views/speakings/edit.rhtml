@@ -1,0 +1,16 @@
+
+<% form_remote_tag :url => url_for(:action => 'update', :id => @speaking), :html => { :class => "classic" } do -%>
+  <%= render :partial => 'form' %>  
+
+<div class="buttons">
+  <%= submit_tag "Enregistrer"	%>
+ou 
+ <%= link_to_remote "Annuler", :url => { :controller => "speakings", :action => 'create', :id => "cancel"} %>
+
+</div>
+<% end %>
+
+<script type="text/javascript">
+	$('speaking_language').focus()	
+</script>
+

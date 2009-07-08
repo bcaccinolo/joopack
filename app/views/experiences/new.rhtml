@@ -1,0 +1,20 @@
+<% form_remote_tag :url => url_for(:controller => "experiences", :action => 'create'), :html => { :class => "classic" } do -%>
+
+  <%= render :partial => 'form' %>
+  
+  <script type="text/javascript">
+	disable_end_date_new_form($("check_button_<%= @experience.id %>"));
+  </script>
+
+<div class="buttons">
+  <%= submit_tag "Enregistrer" %> 
+ou 
+  <%= link_to_remote "Annuler", :url => { :controller => "experiences", :action => 'create', :id => "cancel"} %>
+<% end %>
+</div>
+
+
+<script type="text/javascript">
+	console.log('test');
+	$('experience_company').focus();
+</script>

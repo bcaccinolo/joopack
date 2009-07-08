@@ -1,0 +1,2 @@
+
+page.replace_html 'moovers_data', :partial => "moovers_datas/show", :locals => { :user => @user, :moovers_data => @moovers_data}

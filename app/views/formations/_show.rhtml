@@ -1,0 +1,29 @@
+<div class="editable2">		
+<div class="control_block2">
+
+<% if logged_in? and @user.login == current_user.login %>
+	<%= image_tag("handle.gif", :class => "handle_elem") %>
+	
+	<%= link_to_remote "Editer", :update => "form_#{f.id}", :url => {:controller => "formations", :action => "edit", :id => f.id} %>
+	<%= link_to_remote image_tag("delete.gif"), :url => {:controller => "formations", :action => "destroy", :id => f.id}, :confirm => "Voulez vous supprimer cette formation ?" %>
+<% end  %>
+
+</div>
+
+<dl>
+  <% unless f.diploma.blank? %>
+	<dt>Diplome:</dt> <dd><%=f.diploma %></dd>
+	<% end %>
+	
+	<% unless f.school.blank? %>
+	<dt>Ecole:</dt> <dd><%=f.school %></dd>
+	<% end %>
+	
+	<% unless f.date.blank? %>
+	<dt>Date:</dt> <dd><%=f.date %></dd>
+	<% end %>
+	
+</dl>
+
+<div class="end_float"></div>
+</div>

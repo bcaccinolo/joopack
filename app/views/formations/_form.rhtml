@@ -1,0 +1,18 @@
+<%= error_messages_for 'formation' %>
+
+<dl>
+  <dt>Diplome</dt><br>
+  <dd><%= text_field 'formation', 'diploma'  %></dd>
+
+  <dt>Ecole</dt><br>
+  <dd><%= text_field 'formation', 'school'  %></dd>
+
+
+  <dt>Date d'obtention</dt><br>
+  <dd>
+  <%= select 'formation', 'date_month', MONTHS, { :include_blank => true }  %>
+  <%= select 'formation', 'date_year', YEARS, { :include_blank => true }  %>
+  </dd>
+
+</dl>
+

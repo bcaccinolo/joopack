@@ -1,0 +1,20 @@
+<div class="editable">
+
+	<div class="control_block2">	  
+		<% if logged_in? and @user.login == current_user.login %>
+		<%= link_to_remote "Editer", :update => "title_block", 
+		:url => { :controller => "moovers_datas", :action => "edit_title", 
+							:id => @user.id} %>
+		
+		<% end  %>
+	</div>
+
+			
+		<% if @cv.moovers_data.nil? or @cv.moovers_data.cv_title.blank?  %>
+			Renseigner le titre du CV 
+		<% else %>
+			<%= @cv.moovers_data.cv_title  %>		
+		<% end %>
+		
+	
+</div>

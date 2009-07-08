@@ -1,0 +1,8 @@
+<% for column in Hobby.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @hobby.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @hobby %> |
+<%= link_to 'Back', :action => 'list' %>

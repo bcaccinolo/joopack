@@ -1,0 +1,23 @@
+<div class="content" id="signup_login">
+
+<br>
+
+<p>Je ne suis pas encore inscrit. <%= link_to "Je créé mon compte", "/account/signup/" %></p>
+<p>Ou</p>
+<p>Je suis déja inscrit. Je me connecte.</p>
+
+<% unless @flash_message.blank? %>
+<div id="flash" class="flash">	
+  <%= @flash_message %>
+</div>
+<script type="text/javascript">
+<%= visual_effect(:highlight, "flash", :duration => 0.5) %>
+<%= visual_effect(:fade, "flash", :duration => 3) %>
+</script>
+<% end %>	
+
+<%= render :partial => "login" %>
+
+<br>
+
+</div>

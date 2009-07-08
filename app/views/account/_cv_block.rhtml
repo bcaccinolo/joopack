@@ -1,0 +1,24 @@
+
+<div class="block">
+<div class="editable">
+    
+<h3><%= title %></h3>
+<div class="title_commands">
+    <span id="plus_exp" class="plus">
+    <% if logged_in? and session[:user] == @user.id  %>
+    <%= link_to_remote "> #{action_title}", :update => id_update, :url => {:controller => controller, :action => "new"} %>
+    <% end  %>
+    </span>
+</div>
+<div class="end_float"></div>
+    
+
+<%= render :partial  => "#{controller}/list" %>
+</div>
+</div>
+
+
+
+
+
+

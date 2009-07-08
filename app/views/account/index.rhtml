@@ -1,0 +1,50 @@
+
+<div class="sleeve">
+  <div class="page">
+    <div class="left">
+      <h1>
+        Un CV pour trouver <br>le bon poste
+      </h1>
+      <p>
+        Cr&eacute;ez votre CV sur Joopack et exportez-le simplement <br>en PDF ou en DOC.
+      </p>
+      
+      <% if session[:user].nil? %>
+      <a href="/account/signup">
+        <img src="images/subscribe.png"/>
+      </a>
+      <% end %>
+    </div>
+    <img class="right" src="images/cv_base2.png"/>
+    <br clear="all"/>
+  </div>
+</div>
+
+<div class="page">
+  <div class="bottom">
+    <div class="prez_block">
+      <img src="images/smiley.png"/>
+      <p>
+        <b>Soyez malin</b><br> R&eacute;pondez rapidement aux offres d'emploi en exportant 
+        votre CV en un clic en PDF ou en DOC.
+      </p>
+      <br clear="all"/>
+    </div>
+    <div class="prez_block">
+      <img src="images/earth.png"/>
+      <p>
+        <b>Soyez libre</b><br> Votre CV vous suit ou que vous soyez. Il est accessible 
+        &agrave; tout moment par le web.
+      </p>
+      <br clear="all"/>      
+    </div>
+    <div class="prez_block">
+      <img src="images/lock.png"/>
+      <p>
+        <b>Soyez agile</b><br>Ne perdez plus votre CV.        
+      </p>
+      <br clear="all"/>      
+    </div>    
+  </bottom>
+</page>
+<br clear="all"/>      

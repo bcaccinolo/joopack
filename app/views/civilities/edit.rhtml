@@ -1,0 +1,14 @@
+
+<% form_tag :action => 'update', :id => @civility do %>
+  <%= render :partial => 'form' %>
+
+  <%= submit_to_remote "Create", "Sauvegarder", 
+		:url => {:controller => "civilities", :action => "update", :id => @civility.id}
+	%>
+
+ <%= link_to_remote "annuler", :update => "info_perso", :url => {:controller => "civilities", :action => "show", :id => @civility.id}%>
+
+
+<% end %>
+
+

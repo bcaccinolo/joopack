@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>JooPack</title>
+
+  <%= stylesheet_link_tag 'hacks' %>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag "prototype", "scriptaculous", "application" %> 
+
+</head>
+
+<body>
+
+<div class="page">
+  <div class="header">
+    <%= link_to image_tag("logo.png"), {:controller => "account", :action => "index"}, {:class => "logo"} %>
+
+    <div class="menu_top">
+      <% unless session[:user].nil?  %>
+      <%= link_to "Mon CV", :controller => "account", :action => "show", :id => @user.login %> | 
+      <%= link_to "Exporter", :controller => "export", :action => "index", :id => @user.login %> |         
+      <%= link_to "Mon compte", :controller => "account", :action => "settings" %> | 
+      <%= link_to "Déconnexion", :controller => "account", :action => "logout" %>
+    	<% else %>
+    	<%= link_to "Connexion", :controller => "account", :action => "login" %>
+      <% end %>
+    </div>
+
+    <br clear="all" />
+  </div>
+</div>
+
+	<%= yield  %>
+
+<div class="page">
+  <div class="footer">
+<% unless session[:user].nil? %>
+    <%= link_to("Remarque ou suggestion?", {:controller => "feedbacks", :action => "new"}, {:class => "feedback_link"}) %>
+       |   
+<% end %>
+
+<%= link_to "Conditions Générales",  {:controller => "account", :action => "legal"}  %> | 
+
+Joopack est un service <%= link_to "Donegarden", "http://donegarden.com", {:popup => true, :class => "feedback_link"}  %>
+ | <%= link_to "Blog", "http://blog.donegarden.com", {:popup => true, :class => "feedback_link"}  %>   
+  </div>
+</div>
+<br/>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1638436-5";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+
+page.replace 'moovers_data', :partial => "new", :locals => { :user_id => @user_id }

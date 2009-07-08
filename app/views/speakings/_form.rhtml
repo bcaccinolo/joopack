@@ -1,0 +1,12 @@
+<%= error_messages_for 'speaking' %>
+
+<dl>
+  <dt>Langue</dt><br/>
+  <dd><%= text_field 'speaking', 'language'  %></dd>
+
+  <dt>Niveau</dt><br/>
+  <dd>
+    <%= select("speaking", "level", Speaking::LEVELS ) %>
+	</dd>
+</dl>
+

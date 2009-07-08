@@ -1,0 +1,4 @@
+
+# page.replace_html 'current_photo', :partial => "formation_list"
+
+page.alert('done')

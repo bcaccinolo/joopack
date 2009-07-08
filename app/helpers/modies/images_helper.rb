@@ -1,0 +1,2 @@
+module Modies::ImagesHelper
+end

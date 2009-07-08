@@ -1,0 +1,72 @@
+<div class="block" id="tag-cloud">
+
+  <h3>Tags</h3>
+  <div class="tags">
+
+    <script type="text/javascript">
+    function change_tag_selection(link, hidden) {
+      class_name = $(link).className;
+      switch (class_name)
+      {
+        case "little":
+        $(link).className = "little_selected";
+        $(hidden).value = "on";
+        break;
+        case "little_selected":
+        $(link).className = "little";
+        $(hidden).value = "off";
+        break;
+        case "medium":
+        $(link).className = "medium_selected";
+        $(hidden).value = "on";
+        break;
+        case "medium_selected":
+        $(link).className = "medium";
+        $(hidden).value = "off";
+        break;
+        case "big":
+        $(link).className = "big_selected";
+        $(hidden).value = "on";
+        break;
+        case "big_selected":
+        $(link).className = "big";
+        $(hidden).value = "off";
+        break;
+
+      }
+    }
+
+    </script>
+
+<%= form_tag "/account/tag_search" %>
+<%	@tags.each do |tag| %>
+  <% 
+  if tag.count == 1
+    tag_class = "little"
+  elsif tag.count == 2
+    tag_class = "medium"
+  else
+    tag_class = "big"
+  end
+  if @tag_selections[tag.id.to_s] == "on"
+    tag_class << "_selected"
+  end
+  %>
+
+  <%= link_to_function(tag.name, "change_tag_selection('test_#{tag.id}', 'hidden_#{tag.id}')", :id => "test_#{tag.id}", :class => tag_class) %>
+  <%= hidden_field_tag "tags[#{tag.id}]", @tag_selections[tag.id.to_s] , { :id => "hidden_#{tag.id}"} %>
+
+  <% end  %>
+  <br><br>
+
+      <!-- <div class="button">
+        <%= submit_tag "Rechercher" %>
+      </div> -->
+
+
+
+    </form>
+
+  </div>
+</div>
+

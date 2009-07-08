@@ -1,0 +1,12 @@
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+
+  <%= submit_to_remote "Create", "Sauvegarder", 
+		:url => {:controller => "civilities", :action => "create"}
+	%>
+
+
+<a href="#" onclick="Effect.SlideUp('info_perso'); Effect.Appear('info_link')">Annuler</a>
+
+<% end %>

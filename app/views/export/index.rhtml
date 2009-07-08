@@ -1,0 +1,72 @@
+
+<div class="content">
+
+  <h1 class="inner">Exporter votre CV</h1>
+  
+  <div class="inner">	
+
+
+
+<% if @action.nil? or (@action.status == "DONE_TAKEN") %>
+
+<% 
+  waiting_status_display = "block"
+  running_status_display = "none"
+  done_not_taken_status_display = "none"
+%>
+
+<% elsif @action.status == "WAITING" or @action.status == "RUNNING" %>
+
+<% 
+  waiting_status_display = "none"
+  running_status_display = "block"
+  done_not_taken_status_display = "none"
+%>
+
+<% else %>
+
+<% 
+  waiting_status_display = "none"
+  running_status_display = "none"
+  done_not_taken_status_display = "block"
+%>
+
+<% end %>
+
+
+<div id="waiting_status" style="display:<%= waiting_status_display %>;">
+  <p>Sélectionnez le format d'export souhaité:</p>
+
+<% form_remote_tag :url=> url_for(:controller => "export", :action => "create_action") do %> 
+
+  <input type="radio" name="type" value="pdf_export" id="pdf_output" /><label for="pdf_output">PDF: un format sure et non modifiable</label>
+<br>
+  <input type="radio" name="type" value="doc_export" id="doc_output" /><label for="doc_output">DOC: un format éditable</label>
+<br>
+  <input type="radio" name="type" value="odt_export" id="odt_output" /><label for="odt_output">ODT: un format ouvert</label>
+<br>
+  <div class="button_block" >
+
+  <input type="submit" id="validation_button" value="Exporter"  />
+
+    <img src="/images/spinner.gif"  style="display:none;" />
+  </div>
+</div>
+
+<% end %>
+
+<div id="running_status" class="info_block" style="display:<%= running_status_display %>;" >
+  <p>Votre CV est en cours de génération</p>
+  <br clear="all" />
+</div>
+
+<div id="done_not_taken_status" class="info_block" style="display:<%= done_not_taken_status_display %>;"   >
+    <p>CV généré et envoyé par mail. <br> Je n'arrive pas à récupérer mon CV: 
+        <%= link_to_remote "Refaire une demande d'export", :url => { :controller => "export", :action => "reinitialize"} %>
+    </p>
+    <br clear="all" />      
+</div>
+
+
+  </div>
+</div>

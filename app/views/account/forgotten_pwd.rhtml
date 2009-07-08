@@ -1,0 +1,23 @@
+
+
+<% unless flash[:notice].nil? %>
+<div class="flash">
+  <div class="info"><%= flash[:notice] %></div>
+</div>
+<% end %>
+
+<dl class="login">
+
+  <p>Veuillez entrer votre mail pour recevoir un nouveau mot de passe:</p>
+  
+  <form method="post" >
+
+  <dt>Email</dt>	
+	<dd><input type="text" name="email"></dd>
+	<dt></dt>
+	<dd><%= submit_tag 'Envoyer' %></dd>	
+		
+  </form>
+
+</dl>
+

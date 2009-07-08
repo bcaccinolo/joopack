@@ -1,0 +1,17 @@
+
+
+<% form_tag  :controller => "templates", :action => 'search_result' do %>
+
+<dl id="mover">
+	
+<dt>Poste</dt>
+<dd><%= text_field 'user', 'login'  %></dd>
+	
+<dt><label for="user_status">Ville</label></dt>
+<dd><%= text_field 'user', 'status'  %></dd>
+
+</dl>
+<div class="button">
+ <%= submit_tag "Rechercher", :id => "search_button" %>
+</div>
+<% end %>

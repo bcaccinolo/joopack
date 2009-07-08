@@ -1,0 +1,50 @@
+
+<div class="content cv_page">	
+<% if flash.include? :notice %>
+<div class="flash">
+  <div class="info"><%= flash[:notice] %></div>
+</div>
+<% end %>
+
+<div class="title" id="title_block">
+  <%= render :partial  => "moovers_datas/cv_title" %>
+</div> 
+
+<%= render :partial  => "fiche_info" %>
+
+<%= render :partial  => "cv_block", :locals => { :title => "Expériences", 
+                                    :action_title => "Ajouter une expérience", 
+                                    :id_update => "exp_list", 
+                                    :controller => "experiences" } %>
+
+<%= render :partial  => "cv_block", :locals => { :title => "Formations", 
+                                    :action_title => "Ajouter une formation", 
+                                    :id_update => "formation_list", 
+                                    :controller => "formations" } %>
+
+<%= render :partial  => "cv_block", :locals => { :title => "Compétences", 
+                                    :action_title => "Ajouter une compétence", 
+                                    :id_update => "skill_list", 
+                                    :controller => "skills" } %>
+
+<%= render :partial  => "cv_block", :locals => { :title => "Langues", 
+                                    :action_title => "Ajouter une langue", 
+                                    :id_update => "speaking_list", 
+                                    :controller => "speakings" } %>
+
+<%= render :partial  => "cv_block", :locals => { :title => "Centres d'int&eacute;r&ecirc;t", 
+                                    :action_title => "Ajouter un centre d'int&eacute;r&ecirc;t", 
+                                    :id_update => "hobby_list", 
+                                    :controller => "hobbies" } %>
+
+</div>
+
+
+
+
+
+
+
+
+
+

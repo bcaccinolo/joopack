@@ -1,0 +1,7 @@
+
+page.replace_html "formation_list", :partial => "formations/list", :locals => { :type => @current_type }
+
+page.replace_html "plus_formation",  link_to_remote( "[+]", :url => { :controller => "formations", :action => "show", :type => @future_type} )
+
+
+

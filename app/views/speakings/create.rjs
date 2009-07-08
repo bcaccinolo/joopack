@@ -1,0 +1,2 @@
+
+page.replace 'speaking_list', :partial => "list"

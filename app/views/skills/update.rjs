@@ -1,0 +1,2 @@
+
+page.replace_html 'skill_'+@skill.id.to_s, :partial => "skills/show", :locals => {"e" => @skill}

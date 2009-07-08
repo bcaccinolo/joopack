@@ -1,0 +1,17 @@
+<%= error_messages_for 'user' %>
+
+<dl>
+<dt>Login (prochainement modifiable)</dt>
+<dd><input name="password" value="<%= @user.login %>" disabled></input></dd>
+
+<dt>Email</dt>
+<dd><input name="email" value="<%= @user.email %>" ></input></dd>
+
+<dt>Password</dt>
+<dd><input type="password" name="password" value=""></input></dd>
+
+<dt>Password Confirmation</dt>
+<dd><input type="password" name="password_confirmation" value=""></input></dd>
+
+</dl>
+

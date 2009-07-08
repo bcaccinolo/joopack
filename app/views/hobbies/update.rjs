@@ -1,0 +1,4 @@
+
+page.replace_html "hobby_#{@hobby.id}", :partial => "hobbies/show", 
+                  :locals => {"hobby" => @hobby, "user_id" => @user.id}
+

@@ -1,0 +1,26 @@
+<div class="editable">
+	<div class="control_block">
+
+<% if logged_in? and @user.login == current_user.login  %>
+<span id="plus_exp" class="plus">
+	<%= link_to_remote image_tag("delete.gif"), :url => { :controller => "../netwaves", :action => "delete", :id => mody.id } %>
+	<%= image_tag "handle.gif", :id => "handle", :class => "handle" %>
+</span>
+<span id="plus_exp" class="plus">
+	<%= link_to_remote image_tag("edit.gif"), :update => "block_#{mody.id.to_s}", 
+			:url => { :controller => "modies/video", :action => "edit", :id => mody.mody_id, :main_id => mody.id } %>
+</span>
+<% end %>
+</div>
+
+
+<% mody_video = mody.video %>
+<% if mody_video.nil? %>
+ Une erreur est survenue lors du chargement du module 
+<% else  %>
+<h3><%= mody_video.title %></h3>
+<div class="video_content">
+<%= mody_video.object %>
+</div>
+<% end  %>
+</div>

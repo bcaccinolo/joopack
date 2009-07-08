@@ -1,0 +1,27 @@
+<h1>Listing moovers_datas</h1>
+
+<table>
+  <tr>
+  <% for column in MooversData.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for moovers_data in @moovers_datas %>
+  <tr>
+  <% for column in MooversData.content_columns %>
+    <td><%=h moovers_data.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => moovers_data %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => moovers_data %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => moovers_data }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @moovers_data_pages.current.previous } if @moovers_data_pages.current.previous %>
+<%= link_to 'Next page', { :page => @moovers_data_pages.current.next } if @moovers_data_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New moovers_data', :action => 'new' %>

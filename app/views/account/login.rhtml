@@ -1,0 +1,28 @@
+
+<% unless flash[:notice].nil? %>
+<div class="flash">
+  <div class="info"><%= flash[:notice] %></div>
+</div>
+<% end %>
+
+<% form_tag :action => "login" do -%>
+<dl class="login">
+	<dt>Login</dt>
+	<dd><%= text_field_tag 'login' %></dd>
+
+	<dt>Mot de passe</dt>
+	<dd><%= password_field_tag 'password' %></dd>
+
+  <dt></dt>
+  <dd><%= check_box_tag 'remember_me' %><label for="remember_me">Se souvenir</label></dd>
+
+	<dt></dt>
+	<dd><%= submit_tag 'Connexion' %></dd>	
+	
+	<dt></dt>
+  <dd><%= link_to "Mot de passe oubli&eacute;?", :action => "forgotten_pwd" %></dd>
+
+
+</dl>
+
+<% end -%>

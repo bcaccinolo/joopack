@@ -1,0 +1,39 @@
+
+<div class="editable">
+	<div class="control_block">
+
+	<% if logged_in? and @user.login == current_user.login %>
+	<span id="plus_exp" class="plus">
+		<%= link_to_remote image_tag("delete.gif"), :url => { :controller => "../netwaves", :action => "delete", :id => mody.id } %>
+		<%= image_tag "handle.gif", :id => "handle", :class => "handle" %>
+	</span>
+	<span id="plus_exp" class="plus">
+		<%= link_to_remote image_tag("link-new.png"), :update => "content_block_#{mody.id.to_s}", :url => { :controller => "modies/images", :action => "new", :id => mody.mody_id, :main_id => mody.id } %>
+	</span>
+
+	<% end %>
+</div>
+
+<h3>Mes Photos</h3>
+
+<div id="content_block_<%= mody.id.to_s %>"> 
+
+	<% mody_image = mody.images  %>
+	<% if mody_image.nil? %>
+	Une erreur est survenue lors du chargement du module 
+	<% else  %>
+	<%
+	images = mody_image.images
+	images.each do |image| %>
+
+	<%=  %>
+
+	<a href="<%= image.public_filename %>" class="lWOn" title="titre" caption="un commentaire">
+	<%= image_tag image.public_filename("thumb"), { :height => "100px"} %>
+
+	<% end  %>
+
+</div>
+
+<% end %>
+

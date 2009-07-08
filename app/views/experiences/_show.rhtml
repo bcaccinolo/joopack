@@ -1,0 +1,46 @@
+<div class="editable2">	
+
+<div class="control_block2">
+<% if logged_in? and @user.login == current_user.login %>
+	<%= image_tag("handle.gif", :class => "handle_elem") %>
+	
+	<%= link_to_remote "Editer", :update => "exp_#{e.id}", 
+						:url => {:controller => "experiences", :action => "edit", :id => e.id} %>
+	<%= link_to_remote image_tag("delete.gif"), 
+						:url => {:controller => "experiences", :action => "destroy", :id => e.id}, 
+						:confirm => "Voulez vous supprimer cette expériences?" %>
+<% end  %>
+</div>
+
+
+<dl>
+  <% unless e.company.blank? %>
+	<dt>Entreprise:</dt> <dd><%=h e.company %></dd>
+	<% end %>
+	
+	<% unless e.function.blank? %>
+	<dt>Fonction:</dt> <dd><%=h e.function %></dd>
+	<% end %>
+	
+	<% unless e.begin.blank? %>
+	<dt>Début:</dt> <dd><%=h e.begin %></dd>
+	<% end %>
+
+    <% unless e.end.blank? %>
+      <dt>Fin:</dt>	
+      <% if e.end == "IN_POST" %>  
+          <dd>Actuellement en poste</dd>
+      <% else  %>
+          <dd><%=h e.end %></dd>
+      <% end  %>
+    <% end %>
+
+	<% unless e.details.blank? %>
+      <dt>Détails:</dt><br> <dd><%= e.details.gsub /\r?\n/, "<br>" %></dd>
+	<% end %>
+
+</dl>
+
+<div class="end_float"></div>
+
+</div>

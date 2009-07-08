@@ -1,0 +1,54 @@
+<!--  -*- Mode: Textile; -*-  -->
+
+h1. Insertion of the OpenOffice Macro to export the CV in doco por pdf (Just tested on Ubuntu)
+
+ sudo cp components/AutoText.xba /usr/lib/openoffice/share/basic/Gimmicks/AutoText.xba 
+
+h1. launching production server
+
+ sudo mongrel_rails start -d -e production
+
+h1. Configuration of the CRON to the export task
+
+*/5 *   * * * *  root  wget -q -O /dev/null http://next.joopack.com/export/do_next
+
+
+h1. Changelog
+
+ * (2008-03-10) adding the option "newsletter subscription"
+ * (R1004 - 2008-02-06) adding the general usage conditions
+
+h2. Version 0.6.0 - 19/02/08
+ * ODT export
+ * possibility to change yout email
+ * possibility to close your account
+ * update on the setting interface
+ * BugFix: deletion of useless informations in the generated CVs.
+
+h2. Version 0.5.2 - 06/12/07
+ * add of the section Hobbies and Skills
+ * debug on the CV generation
+
+h2. Version 0.5.1 - 30/11/07 
+ * creation of an independant script to generate the CVs
+ * adaptation of the plugin white_list for the controllers and models
+
+h2. Version 0.5 - 24/11/07 
+ * installation of Capistrano
+ * escaping of malicious script done in the fields using Whitelist
+ * update done a the mail server
+ * Signup up do not ask validation for the moment due to problem with email of validation
+ * form is asking your birthdate nor your age.
+ * some CSS update	
+
+h2. Version 0.4 - 13/11/07
+ * Toutes les données passent bien lors de l'export.
+
+h2. Version 0.3 - 31/10/07
+* Mise en place de l'export avec un scheduler clean (les demandes sont mises en DB)
+* Modification de l'interface pour compatibilité avec IE.
+
+h2. Version 0.2 - 23/10/07
+* Avancée sur la compatibilité IE et FX.
+* Création d'une page spécifique pour l'export
+

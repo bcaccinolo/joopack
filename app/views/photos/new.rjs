@@ -1,0 +1,4 @@
+
+page.replace_html 'form_photo', :partial => "photos/new"
+page.visual_effect :appear, 'form_photo'
+

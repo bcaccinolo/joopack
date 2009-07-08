@@ -1,0 +1,34 @@
+<%= error_messages_for 'moovers_data' %>
+
+<input type="hidden" name="id" value="<%= @user_id %>" >
+
+<dl>
+  <dt>Prénom</dt><br>
+  <dd><%= text_field 'moovers_data', 'firstname'  %></dd>
+
+  <dt>Nom</dt><br>
+  <dd><%= text_field 'moovers_data', 'lastname'  %></dd>
+
+  <dt>Date de naissance</dt><br>
+  <dd>
+  <%= select 'moovers_data', 'birth_day', (1..31).map {|e| e }, { :include_blank => true }  %>    
+  <%= select 'moovers_data', 'birth_month', MONTHS.map {|m| [m, MONTHS.index(m)+1] }, { :include_blank => true }  %>
+  <%= select 'moovers_data', 'birth_year', YEARS, { :include_blank => true }  %>
+  </dd>
+  
+  <dt>Adresse</dt><br>
+  <dd><%= text_field 'moovers_data', 'address'  %></dd>
+
+  <dt>Code Postal</dt><br>
+  <dd><%= text_field 'moovers_data', 'postal_code'  %></dd>
+
+  <dt>Ville</dt><br>
+  <dd><%= text_field 'moovers_data', 'city'  %></dd>
+
+  <dt>Email</dt><br>
+  <dd><%= text_field 'moovers_data', 'email'  %></dd>
+
+  <dt>Téléphone</dt><br>
+  <dd><%= text_field 'moovers_data', 'phone'  %></dd>
+
+</dl>

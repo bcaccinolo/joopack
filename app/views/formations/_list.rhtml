@@ -1,0 +1,16 @@
+
+<ul id="formation_list" class="block_list">
+  <% 	@cv.formations.each do |f| %>
+
+  	<li id="form_<%= f.id %>" class="exp">
+  		<%= render :partial => "formations/show", :locals => {"f" => f} %>
+  	</li>
+  	
+  <% end  %>		
+</ul>
+
+<%= sortable_element 'formation_list', 
+      :handle => 'div.editable2 div.control_block2 img.handle_elem', 
+      :complete => visual_effect(:highlight, 'formation_list'), 
+      :url => { :controller => "formations", :action => "order", :id => @user.id } %>
+

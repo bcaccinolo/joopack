@@ -1,0 +1,15 @@
+
+<ul class="block_list" id="speaking_list" >
+  <% 	@cv.speakings.each do |speak| %>
+		<li id="speak_<%= speak.id %>" class="exp">
+			<%= render :partial => "speakings/show", :locals => {"speak" => speak} %>
+		</li>
+		<% 	end %>
+ </ul>
+
+ <%= sortable_element 'speaking_list', 
+       :handle => '.handle_elem', 
+       :complete => visual_effect(:highlight, 'speaking_list'), 
+       :url => { :controller => "speakings", :action => "order", :id => @user.id } %>
+
+

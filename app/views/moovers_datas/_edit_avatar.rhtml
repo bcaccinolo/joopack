@@ -1,0 +1,13 @@
+
+<% form_for :avatar, :url => { :controller => 'moovers_datas', :action => 'save_avatar' }, :html => { :multipart => true } do |f| -%>
+  <p><%= f.file_field :uploaded_data, :size => 1   %></p>
+  <br>
+  <p><%= submit_tag "Enregistrer" %>
+<br>ou 
+<%= link_to "Annuler", :controller => "moovers_datas", :action => "save_avatar", :id => "cancel"  %>
+
+</p>
+<% end -%>
+
+
+

@@ -1,0 +1,14 @@
+
+<% if selected == 'job' 
+	job_id = "search_selected"
+	mover_id = ""
+else
+	job_id = ""
+	mover_id = "search_selected"
+end %>
+
+
+<%= link_to_remote "Rechercher un métier", {:url => {:controller => "templates", :action => "search_metier"}}, {:id => job_id} %>
+ | 
+<%= link_to_remote "Rechercher un Mover", {:url => {:controller => "templates", :action => "search_mover"}}, {:id => mover_id} %>
+ 

@@ -1,0 +1,231 @@
+
+body
+  :background-color = !blue0
+  :font-family "Lucida Grande",verdana,arial,sans-serif
+  :font-size = !font_normal
+  :margin 0
+  :padding 0
+  :border-top 2px solid
+  :border-color = !pink1
+  
+
+a
+  :color black
+  / :text-decoration none
+  hover
+    :color black
+    :text-decoration underline
+
+.end_float
+  :clear both
+  :display block
+  :margin 0
+  :padding 0
+
+
+.page
+  :border 0px solid red
+  :margin 0 auto 0 auto
+  :padding 0
+  :width 800px
+
+  / =============================================================================
+  / = Header Part ===============================================================
+  / =============================================================================
+  .header
+    :margin 0 auto 10px auto 
+    :color = !gray
+    a
+      :color = !gray
+    .logo
+      :float left
+      :margin 4px 0
+      :padding 0
+      a
+        :margin 0
+      h1
+        :padding 2px 0
+        :margin 0
+    .menu_top
+      :border 0px solid red
+      :float right
+
+  / =============================================================================
+  / = Footer Part ============================================================= =
+  / =============================================================================
+  .footer
+    :border-top 2px solid 
+    :border-color = !blue3
+    :text-align center
+    :margin-top 20px
+
+  .bottom
+    :border 0px solid yellow
+    .prez_block
+      :border none
+      :margin 0
+      :float left
+      :width 264px
+      img 
+        :float left
+        :width 70px
+      p
+        :border 0px solid yellow
+        :margin 0 0 0 10px
+        :font-size 16px
+        :width 150px
+        :float left
+        :text-align justify
+
+
+.content 
+  :border 0px solid red
+  :margin 0 auto 0 auto
+  :width = !main_width
+
+h1.inner
+  :margin 0
+  :padding 5px
+  :border-top 2px solid #307FE6  
+  :background-color = !blue1
+  :color = !blue3
+
+div.inner 
+  :padding 5px
+  :background-color #fff
+  :font-size 14px
+  .button_block
+    :text-align center    
+    .button
+      :margin 0 auto 0 auto 
+      :text-align center    
+  .info_block
+    :margin 3px
+    :padding 10px 0 0 65px
+    :font-size 20px
+    :border 2px solid 
+    :border-color = !green0
+    :background-color = !green1
+    :color #CC4C3F  
+  #running_status
+    :background url(/images/working.png) no-repeat 3px 3px
+    :background-color = !green1  
+  #done_not_taken_status
+    :background url(/images/smiley100.png) no-repeat 3px 3px
+    :background-color = !green1  
+
+/ ====================
+/ = Flashing message =
+/ ====================
+.flash
+  :margin 0 auto 0 auto
+  :width 500px
+  :border 2px solid = !green0
+  :padding 3px
+  :margin-bottom 10px
+  :text-align center
+  :font-weight bold
+  :font-size 16px
+  :color #CC4C3F
+  :background = !green1
+  .error
+    :background = !error_bg
+    :color = !error_color
+
+/ ===============================
+/ = Main information display    =
+/ ===============================
+.cv_page  
+  ul.block_list
+    :margin 0
+  li.exp
+    :border 1px solid #999
+    :margin 2px
+    :padding 0 0 2px
+    :list-style none
+  dl 
+    :font-size 16px
+    :margin 5px 0 5px 5px
+    dt
+      :padding-right 10px
+      :float left
+      :text-align right
+    dd
+      :margin-bottom 7px
+      :text-align left
+      :margin-left 0
+      :width 400px
+
+/ ====================
+/ = Classic Forms    =
+/ ====================
+form.classic
+  :width 260px
+  :margin 0 auto 20px auto
+  dl
+    :font-size 14px
+    dt
+      :text-align left
+    dd
+      :margin-bottom 7px
+      :margin-left 0
+      :text-align left
+  .buttons
+    :width 200px
+    :font-size 14px
+    :margin 20px auto 0 auto
+    :text-align center
+
+form.cv_title
+  :margin 0px solid red  
+  :margin 0 auto 10px auto
+  dl
+    dd
+      :margin-bottom 2px
+      :margin-left 0
+      :text-align left
+      input.title
+        :width 484px
+        :font-size = !font_big
+        :text-align center
+        :border-size 2px 2px 1px 1px
+        :border-type solid
+        :border-color #848484
+  .buttons
+    :width 200px
+    :font-size 14px
+    :margin 10px auto 0 auto
+    :text-align center
+
+  
+/ ==============
+/ = Block list =
+/ ==============
+.block_list
+  :padding 0
+
+/ OTHER 
+.block
+  :display block
+  :border 1px solid 
+  :border-color = !blue1
+  :border-top 2px solid 
+  :border-top-color = !blue2
+  :padding-bottom 5px
+  :margin-bottom 5px
+  :background #fff
+  p
+    margin: 5px
+
+  p.link
+    :text-align center
+    a
+      :color = !blue3
+      :font-weight bold
+  h3, h3, h3 a, h3 a:hover
+    :text-align left
+    :background = !blue1
+    :margin 0 0 10px 0
+    :padding 0px 0px 2px 5px
+    :color = !blue3
+    :z-index 20

@@ -1,0 +1,47 @@
+<%= error_messages_for 'experience' %>
+
+<dl>
+  <dt>Entreprise</dt><br>
+  <dd><%= text_field 'experience', 'company'  %></dd>
+
+  <dt>Poste</dt><br>
+  <dd><%= text_field 'experience', 'function'  %></dd>
+
+  <dt>Début</dt><br>
+  <dd> 
+  <%= select 'experience', 'begin_month', MONTHS , { :include_blank => true }  %>
+  <%= select 'experience', 'begin_year', YEARS, { :include_blank => true }  %>
+  </dd>
+
+  <dt>Fin</dt><br>
+  <dd>
+  <%= select 'experience', 'end_month', MONTHS, { :include_blank => true }  %>
+  <%= select 'experience', 'end_year', YEARS, { :include_blank => true }  %>
+  </dd>
+
+  <dt></dt>
+  <% exp_id = "experience" + (@experience.id.nil? ? "" : "_#{@experience.id}") + "_end" %>
+  <dd>
+
+	<% if @experience.id.nil? %>
+  		<%= check_box("experience", "in_post", { :id => "check_button_#{@experience.id}", 
+  			:onclick => "javascript:disable_end_date_new_form(this);"}) %>
+	<% else %>			
+	  	<%= check_box("experience", "in_post", { :id => "check_button_#{@experience.id}", 
+  			:onclick => "javascript:disable_end_date(this, '#{@experience.id}');"}) %>
+	<% end %>  
+				
+  	<b>Actuellement en poste</b>
+  </dd>
+
+  <input type="checkbox" name="add_details" onchange="toggle_details(this, 'details_block_<%= @experience.id %>');" id="checkbox_details_<%= @experience.id %>" <%= @experience.details.blank? ? '' : 'checked' %>>
+  <label for="checkbox_details_<%= @experience.id %>"">Ajouter des détails</label>
+  <div id="details_block_<%= @experience.id %>" style="<%= @experience.details.blank? ? 'display:none;' : '' %>" >
+    <dt>Détails</dt><br>
+    <dd>
+      <%= text_area 'experience', 'details' %>
+    </dd>
+  </div>
+
+</dl>
+

@@ -1,0 +1,10 @@
+
+<% form_for :image, :url => { :controller => 'modies/images', :action => 'create', :id => params[:id] }, :html => { :multipart => true } do |f| -%>
+  <p><%= f.file_field :uploaded_data %></p>
+  <p><%= submit_tag "Enregistrer" %>
+ou 
+<%= link_to "Annuler", :controller => "modies/images", :action => "cancel"  %>
+
+</p>
+<% end -%>
+

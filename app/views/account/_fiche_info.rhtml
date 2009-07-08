@@ -1,0 +1,23 @@
+
+<div class="moover_info">
+
+	<%= render :partial => "moovers_datas/show_avatar" %>
+
+	<div class="editable" id="editable2">
+
+	<div class="info" id="moovers_data" >
+		<% if @moovers_data.nil? or @moovers_data.perso_data_empty? %>
+			<%= render :partial => "moovers_datas/create" %>
+		<% else  %>
+  		<%= render :partial => "moovers_datas/show", :locals => { :user => @user, :moovers_data => @moovers_data} %>
+
+		<% end  %>
+	</div>
+
+</div>
+
+	<div class="end_float"></div>
+
+</div>
+
+<div class="end_float"></div>

@@ -1,0 +1,42 @@
+<div class="content">	
+
+	<div class="block">
+
+    <h3>Exporter votre CV au format PDF</h3>
+		
+    <p>Le format PDF est un format souvent demandé par les recruteurs.</p>
+
+    <% pdf_export_action = @user.pdf_export_action %>
+    <p class="link" id="pdf_export" >    
+    <%= render :partial => "export_block", :locals => { :section => "pdf_export", :export_action => pdf_export_action }  %>
+  	</p>
+  		
+	</div>
+		
+	<div class="block">
+
+    <h3>Exporter votre CV au format DOC</h3>
+
+    <p>Exporter votre CV au format DOC vous permettra de l'éditer par la suite.</p>
+
+    <% doc_export_action = @user.doc_export_action %>
+    <p class="link" id="doc_export" >        
+    <%= render :partial => "export_block", :locals => { :section => "doc_export", :export_action => doc_export_action }  %>
+    </p>
+		
+	</div>
+
+	<div class="block">
+
+    <h3>Exporter votre CV au format ODT</h3>
+
+    <p>Exporter votre CV au format ODT vous permettra de l'éditer sous OpenOffice.</p>
+
+    <% odt_export_action = @user.odt_export_action %>
+    <p class="link" id="odt_export" >        
+    <%= render :partial => "export_block", :locals => { :section => "odt_export", :export_action => odt_export_action }  %>
+    </p>
+		
+	</div>
+	
+</div>

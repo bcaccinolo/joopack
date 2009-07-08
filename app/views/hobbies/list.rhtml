@@ -1,0 +1,27 @@
+<h1>Listing hobbies</h1>
+
+<table>
+  <tr>
+  <% for column in Hobby.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for hobby in @hobbies %>
+  <tr>
+  <% for column in Hobby.content_columns %>
+    <td><%=h hobby.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => hobby %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => hobby %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => hobby }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @hobby_pages.current.previous } if @hobby_pages.current.previous %>
+<%= link_to 'Next page', { :page => @hobby_pages.current.next } if @hobby_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New hobby', :action => 'new' %>

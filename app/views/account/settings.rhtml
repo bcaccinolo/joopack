@@ -1,0 +1,104 @@
+
+<div class="content settings">	
+
+<% if flash.include? :notice %>
+<div class="flash">
+  <div class="info"><%= flash[:notice] %></div>
+</div>
+<% end %>
+
+<% if flash.include? :error %>
+<div class="flash">
+  <div class="error"><%= flash[:error] %></div>
+</div>
+<% end %>
+
+
+
+	<div class="block">
+		<h3>Changer le mot de passe</h3>
+
+    <% form_tag( {:action => 'update', :id => @user, :section => "password" }, :class => "classic" )do %>
+
+
+      <%= error_messages_for 'user' %>
+
+      <dl>
+
+      <dt>Nouveau mot de passe</dt>
+      <dd><input type="password" name="password" value=""></input></dd>
+
+      <dt>Confirmation du mot de passe</dt>
+      <dd><input type="password" name="password_confirmation" value=""></input></dd>
+
+      </dl>
+
+      <div class="buttons">
+      <%= submit_tag 'Enregistrer' %> 
+      </div>
+    <% end %>
+    
+	</div>
+
+
+	<div class="block">
+		<h3>Changer mon Email</h3>
+    
+    <% form_tag( {:action => 'update', :id => @user, :section => "email" }, :class => "classic" )do %>
+
+      <dl>
+
+      <dt>Nouvel email</dt>
+      <dd><input name="email" value="<%= @user.email %>" size="35" ></input></dd>
+  
+      </dl>
+
+      <div class="buttons">
+      <%= submit_tag 'Enregistrer' %> 
+      </div>
+    <% end %>
+    
+	</div>
+
+
+
+  <div class="block">
+    <h3>Cloturer mon compte</h3>
+
+    <p>En supprimant votre compte, toutes vos données seront supprimées et non récupérables.</p> 
+
+    <p class="link"><%=  link_to "Supprimer mon compte", { :action => "delete" }, :confirm => "Etes vous sur de vouloir supprimer votre compte Joopack?"  %></p>
+    
+	</div>
+
+  <div class="block">
+  	<h3>Abonnement newsletter</h3>
+
+    <p>La newsletter Joopack vous permet d'être tenu au courant des évolutions faites sur Joopack.</p>
+
+    <% form_tag( {:action => 'update', :id => @user, :section => "subscription" }, :class => "classic" )do %>
+      <p> 
+      <input id="newsletter" type="checkbox" name="newsletter"  value="1" <%= @user.newsletter ? 'checked' : '' %>"  >
+      <label for="newsletter" >Je souhaite recevoir la newsletter</label>
+      </p>
+
+      <div class="buttons">
+      <%= submit_tag 'Enregistrer' %> 
+      </div>
+    <% end %>
+    
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+

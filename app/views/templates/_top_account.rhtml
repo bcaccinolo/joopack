@@ -1,0 +1,16 @@
+
+<div class="contentini" >
+
+
+<%= link_to "<div class='blockini'>#{image_tag('home.png', :height => '20px')}Home</div>", :controller => current_user.status,
+	 	:action => "account" %>
+
+	
+<%= link_to "<div class='blockini'>#{image_tag('icon_mail.png', :height => '20px')} 10 messages</div>", :controller => "templates",
+ 	:action => "mail" %>
+<%= link_to "<div class='blockini'>#{image_tag('icon_ranking.png', :height => '20px')} Ranking: 7/10</div>" %>
+
+<%= link_to "<div class='blockini'>#{image_tag('icon_page.png', :height => '20px')} Ma Page</div>", :controller => current_user.status, :action => "show", :id => current_user.login %> 
+
+</div>
+

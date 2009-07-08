@@ -1,0 +1,15 @@
+
+<ul class="block_list" id="hobby_list" >
+  <% 	@cv.hobbies.each do |hobby| %>
+		<li id="hobby_<%= hobby.id %>" class="exp">
+			<%= render :partial => "hobbies/show", :locals => {"hobby" => hobby} %>
+		</li>
+		<% 	end %>
+ </ul>
+
+ <%= sortable_element 'hobby_list', 
+       :handle => '.handle_elem', 
+       :complete => visual_effect(:highlight, 'hobby_list_list'), 
+       :url => { :controller => "hobbies", :action => "order", :id => @user.id } %>
+
+

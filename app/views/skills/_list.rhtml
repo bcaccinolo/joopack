@@ -1,0 +1,16 @@
+
+<ul class="block_list"  id="skill_list" >
+	<% 	@cv.skills.each do |e| %>
+
+  		<li id="skill_<%= e.id %>" class="exp">
+  			<%= render :partial => "skills/show", :locals => {"e" => e} %>
+  		</li>
+
+	<% end  %>
+</ul>
+
+<%= sortable_element 'skill_list', 
+      :handle => 'img.handle_elem', 
+      :complete => visual_effect(:highlight, 'skill_list'), 
+      :url => { :controller => "skills", :action => "order", :id => @user.id } %>
+

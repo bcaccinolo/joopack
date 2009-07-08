@@ -1,0 +1,2 @@
+
+page.replace_html "block_#{@main_id}", :partial => "modies/video/show", :locals => { :mody => @mody }

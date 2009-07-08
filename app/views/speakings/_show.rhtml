@@ -1,0 +1,25 @@
+<div class="editable2">	
+
+<div class="control_block2">
+<% if logged_in? and @user.login == current_user.login %>
+	<%= image_tag("handle.gif", :class => "handle_elem") %>
+	
+	<%= link_to_remote "Editer", :update => "speak_#{speak.id}", :url => {:controller => "speakings", :action => "edit", :id => speak.id} %>
+	<%= link_to_remote image_tag("delete.gif"), :url => {:controller => "speakings", :action => "destroy", :id => speak.id}, :confirm => "Voulez vous supprimer ce centre d'int&eacute;r&ecirc;t ?" %>
+		
+<% end  %>
+</div>
+
+<dl>
+  <% unless speak.language.blank? %>
+		<dt>Langue:</dt> <dd><%=speak.language %></dd>
+	<% end %>
+	
+	<% unless speak.level.blank? %>
+		<dt>Niveau:</dt> <dd><%=  Speaking::INV_LEVELS[speak.level] %></dd>
+	<% end %>	
+</dl>
+
+<div class="end_float"></div>
+
+</div>

@@ -1,0 +1,16 @@
+
+<div class="editable" id="avatar">
+	
+	<% if not @avatar.nil? %>
+		<%= image_tag @avatar.public_filename, :id => "photo"%>
+	<% else  %>
+		<%= image_tag "default_avatar.png", :id => "photo"%>
+	<% end  %>
+	
+	
+	<% if logged_in? and @user.login == current_user.login %>
+		<%= link_to_remote "Modifier", :update => "avatar", :url => { :controller => "moovers_datas", :action => "avatar" } %>
+	<% end %>
+	
+	<div class="end_float"></div>
+</div>

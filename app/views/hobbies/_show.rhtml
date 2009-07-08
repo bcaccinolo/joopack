@@ -1,0 +1,25 @@
+<div class="editable2">	
+
+<div class="control_block2">
+<% if logged_in? and @user.login == current_user.login %>
+	<%= image_tag("handle.gif", :class => "handle_elem") %>
+	
+	<%= link_to_remote "Editer", :update => "hobby_#{hobby.id}", :url => {:controller => "hobbies", :action => "edit", :id => hobby.id} %>
+	<%= link_to_remote image_tag("delete.gif"), :url => {:controller => "hobbies", :action => "destroy", :id => hobby.id}, :confirm => "Voulez vous supprimer ce hobby ?" %>
+		
+<% end  %>
+</div>
+
+<dl>
+  <% unless hobby.title.blank? %>
+		<dt><%= hobby.title %> : </dt>
+	<% end %>
+	
+	<% unless hobby.desc.blank? %>
+    <dd><%= hobby.desc %>
+	<% end %>	
+</dl>
+
+<div class="end_float"></div>
+
+</div>
